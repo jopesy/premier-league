@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'premier' # add the premier app
+    'premier', # add the premier app
+    'rest_framework', # enable rest framework
 ]
 
 MIDDLEWARE = [
