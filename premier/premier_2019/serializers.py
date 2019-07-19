@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from premier.models import Team, Game, Prediction
+from .models import Team, Game, Prediction
 
 class TeamSerializer(serializers.ModelSerializer):
     class Meta:

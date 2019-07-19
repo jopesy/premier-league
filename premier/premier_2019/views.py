@@ -1,5 +1,5 @@
-from premier.models import Team, Game, Prediction
-from premier.serializers import TeamSerializer, GameSerializer, PredictionSerializer
+from .models import Team, Game, Prediction
+from .serializers import TeamSerializer, GameSerializer, PredictionSerializer
 from rest_framework import generics
 from django.shortcuts import render
 
