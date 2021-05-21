@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     "premier.api",
     "rest_framework",  # enable rest framework
     "rest_framework.authtoken",
+    "oauth2_provider",
+    "social_django",
+    "drf_social_oauth2",
 ]
 
 MIDDLEWARE = [
@@ -60,10 +63,17 @@ CORS_ALLOWED_ORIGINS = ["http://127.0.0.1:3000"]
 
 AUTH_USER_MODEL = "users.User"
 
+AUTHENTICATION_BACKENDS = (
+    "drf_social_oauth2.backends.DjangoOAuth2",
+    "django.contrib.auth.backends.ModelBackend",
+)
+
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework.authentication.SessionAuthentication",
         "rest_framework.authentication.TokenAuthentication",
+        "oauth2_provider.contrib.rest_framework.OAuth2Authentication",
+        "drf_social_oauth2.authentication.SocialAuthentication",
     ],
 }
 
@@ -80,6 +90,8 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "social_django.context_processors.backends",
+                "social_django.context_processors.login_redirect",
             ],
         },
     },

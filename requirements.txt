@@ -3,6 +3,7 @@ coverage==4.5.2
 Django==2.2.3
 django-cors-headers==3.7.0
 djangorestframework==3.10.1
+drf-social-oauth2==1.0.9
 flake8==3.6.0
 isort==4.3.4
 pytz==2018.9
